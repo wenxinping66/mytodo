@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+  <script>
+
+    function convert(i) {
+      var r, n, x = 0, zero = i % 10 === 0;
+      var unit = ['','','十','百','千','万'];
+      var n2c = ['零','一','二','三','四','五','六','七','八','九'];
+      while (i > 0) {
+        x++;
+        n = i % 10;
+        i = ~~(i /= 10);
+        if (n === 0 && i % 10 === 0) continue;
+        r = (r ? n2c[n] + (n ? unit[x] : '') + r : n2c[n]);
+      }
+      return zero ? r.substr(0, r.length - 1) : r;
+    }
+  </script>
+</head>
+<body>
+
+</body>
+</html>
